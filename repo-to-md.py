@@ -1,19 +1,3 @@
-#!/usr/bin/env python3
-"""
-repo-to-md: Convert a code repository into a single Markdown file.
-
-Usage:
-    python repo-to-md.py <repo_path> [options]
-
-Options:
-    -o, --output <file>       Output file (default: <repo_name>.md)
-    -e, --extensions <exts>   Comma-separated extensions to include
-    -x, --exclude <dirs>      Extra directories to skip
-    --max-lines <n>           Skip files exceeding N lines (default: 1000)
-    --include-empty           Include empty files (skipped by default)
-    --no-summary              Omit the file tree at the top of the output
-"""
-
 import os
 import sys
 import argparse
@@ -83,8 +67,6 @@ LANG_MAP = {
 
 def normalise(path, root):
     rel = path.relative_to(root).as_posix()
-    # Guard: on Windows with OneDrive, resolve() can shift the anchor so the
-    # root folder name leaks into the relative path. Strip it if present.
     prefix = root.name + "/"
     if rel.startswith(prefix):
         rel = rel[len(prefix):]
