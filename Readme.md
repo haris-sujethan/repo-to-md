@@ -1,7 +1,7 @@
 ## repo-to-md
 Convert your repository into a single Markdown file for LLM context. 
 
-Plain text / Markdown outperform PDFs for LLM use (less token overhead, cleaner parsing, better retrieval, etc.)
+Plain text / Markdown generally outperform PDFs for LLM use (less token overhead, cleaner parsing, better retrieval, etc.)
 
 - **No external libraries** — Python standard library, nothing to install
 - **Safe for enterprise** — no network calls, runs completely offline
